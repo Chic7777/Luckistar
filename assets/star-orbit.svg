@@ -1,0 +1,30 @@
+<svg width="960" height="540" viewBox="0 0 960 540" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky" x1="57" y1="35" x2="874" y2="496" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7D76D9"/>
+      <stop offset=".36" stop-color="#8FD0E0"/>
+      <stop offset=".69" stop-color="#FFE2A8"/>
+      <stop offset="1" stop-color="#F2B8C6"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#FFFCE1"/>
+      <stop offset=".42" stop-color="#DDF9FF" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="960" height="540" rx="48" fill="url(#sky)"/>
+  <circle cx="480" cy="270" r="210" fill="url(#glow)"/>
+  <path d="M110 325c116-112 237-163 363-153 123 10 245 81 377 213" stroke="#FFF8D0" stroke-width="2" stroke-opacity=".52"/>
+  <path d="M94 250c124 65 249 87 376 65 142-24 269-102 386-234" stroke="#E9FEFF" stroke-width="2" stroke-opacity=".46"/>
+  <path d="M150 390c172 30 325 13 459-51 88-42 158-100 210-174" stroke="#FFFFFF" stroke-width="2" stroke-opacity=".34"/>
+  <g fill="#FFF8C8">
+    <circle cx="177" cy="133" r="3"/>
+    <circle cx="266" cy="79" r="2.5"/>
+    <circle cx="711" cy="113" r="3.5"/>
+    <circle cx="793" cy="336" r="2.5"/>
+    <circle cx="198" cy="422" r="3.5"/>
+    <circle cx="558" cy="454" r="2.5"/>
+    <circle cx="660" cy="376" r="4"/>
+    <circle cx="407" cy="119" r="2"/>
+  </g>
+</svg>

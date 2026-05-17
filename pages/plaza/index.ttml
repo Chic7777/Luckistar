@@ -1,0 +1,51 @@
+<view class="page plaza-page">
+  <view class="page-head">
+    <view>
+      <text class="eyebrow">星光广场</text>
+      <text class="page-title">每一件小幸运，都会在这里发光</text>
+    </view>
+    <button class="mini-btn" bindtap="onPublish">发布</button>
+  </view>
+
+  <view class="visit-card card">
+    <luckistar-avatar star="{{encounterStar}}" size="small" unlocked="{{true}}"></luckistar-avatar>
+    <view>
+      <text class="visit-title">LuckiStar 拜访</text>
+      <text class="muted">{{visitMessage}}</text>
+    </view>
+  </view>
+
+  <view class="masonry-grid">
+    <view class="post-card card" tt:for="{{posts}}" tt:key="id">
+      <view class="post-image {{item.visualClass}} {{item.imageHeightClass}}">
+        <view class="cover-chip-row">
+          <text class="cover-chip">{{item.visualLabel}}</text>
+          <text class="cover-chip is-soft">{{item.secondaryTag}}</text>
+        </view>
+        <view class="cover-body">
+          <text class="cover-title">{{item.charm.name}}</text>
+          <text class="cover-note">{{item.coverNote}}</text>
+        </view>
+        <view class="image-spark">✦</view>
+      </view>
+      <view class="post-body">
+        <text class="post-title">{{item.title}}</text>
+        <text class="post-content">{{item.content}}</text>
+        <view class="tag-line">
+          <text tt:for="{{item.postTags}}" tt:key="*this">{{item}}</text>
+        </view>
+      </view>
+      <view class="post-head">
+        <luckistar-avatar star="{{item.star}}" size="small" unlocked="{{true}}"></luckistar-avatar>
+        <view class="post-author">
+          <text>{{item.nickname}}</text>
+          <text>{{item.dayPillar}} · {{item.createdText}}</text>
+        </view>
+      </view>
+      <view class="post-foot">
+        <text>{{item.stars}} 颗星</text>
+        <button class="post-light-btn" data-id="{{item.id}}" bindtap="onBoost">点亮</button>
+      </view>
+    </view>
+  </view>
+</view>

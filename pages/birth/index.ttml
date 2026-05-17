@@ -1,0 +1,54 @@
+<view class="page birth-page">
+  <view class="birth-hero card">
+    <view class="brand-lockup">
+      <view class="brand-logo-wrap">
+        <image class="brand-logo is-bouncy" src="/assets/luckistar-logo.png" mode="aspectFit" />
+      </view>
+      <view class="brand-copy">
+        <text class="eyebrow">LuckiStar</text>
+        <text class="brand-name">每日星运</text>
+      </view>
+    </view>
+    <text class="page-title page-title-one-line">选择你第一次来到世界的地方</text>
+    <text class="muted">LuckiStar 会根据出生日期、出生时间和出生星运坐标，找到你的本命日柱星灵。</text>
+  </view>
+
+  <view class="birth-form card">
+    <view class="field">
+      <text class="label">昵称</text>
+        <input value="{{nickname}}" maxlength="16" placeholder=" " bindinput="onNicknameInput" />
+    </view>
+
+    <view class="field-grid">
+      <view class="field">
+        <text class="label">出生日期</text>
+        <picker mode="date" value="{{birthDate}}" bindchange="onDateChange">
+          <view class="picker-value">{{birthDate || '选择日期'}}</view>
+        </picker>
+      </view>
+      <view class="field">
+        <text class="label">出生时间</text>
+        <picker mode="time" value="{{birthTime}}" bindchange="onTimeChange">
+          <view class="picker-value">{{birthTime || '选择时间'}}</view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="field">
+      <text class="label">出生星运坐标</text>
+      <view class="field-grid">
+        <picker mode="selector" range="{{provinceOptions}}" value="{{provinceIndex}}" bindchange="onProvinceChange">
+          <view class="picker-value">{{provinceOptions[provinceIndex] || '选择省份'}}</view>
+        </picker>
+        <picker mode="selector" range="{{cityOptions}}" value="{{cityIndex}}" bindchange="onCityChange">
+          <view class="picker-value">{{cityOptions[cityIndex] || '选择城市'}}</view>
+        </picker>
+      </view>
+      <text class="field-hint">你第一次来到世界的地方，会参与真太阳时和日柱计算。</text>
+    </view>
+
+    <button class="btn btn-primary submit-btn" bindtap="onSubmit">开始召唤</button>
+  </view>
+
+  <view class="safe-note">本作品为轻互动娱乐体验，不代表确定预测。</view>
+</view>

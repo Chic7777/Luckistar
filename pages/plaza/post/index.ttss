@@ -1,0 +1,49 @@
+.post-editor {
+  padding: 30rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 22rpx;
+}
+
+.charm-preview {
+  padding: 22rpx;
+  border-radius: 24rpx;
+  background: linear-gradient(135deg, rgba(232, 250, 244, 0.86), rgba(255, 246, 199, 0.8));
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+}
+
+.charm-preview text:first-child {
+  color: #303952;
+  font-size: 32rpx;
+  font-weight: 900;
+}
+
+.charm-preview text:last-child {
+  color: #5d6683;
+  font-size: 25rpx;
+  line-height: 1.6;
+}
+
+textarea {
+  min-height: 340rpx;
+  padding: 24rpx;
+  border-radius: 24rpx;
+  color: #273047;
+  font-size: 28rpx;
+  line-height: 1.68;
+  background: rgba(255, 255, 255, 0.78);
+  box-sizing: border-box;
+}
+
+input {
+  min-height: 84rpx;
+  padding: 0 22rpx;
+  border-radius: 22rpx;
+  color: #273047;
+  font-size: 28rpx;
+  font-weight: 900;
+  background: rgba(255, 255, 255, 0.78);
+  box-sizing: border-box;
+}

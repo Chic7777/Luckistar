@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "本命 LuckiStar",
+  "usingComponents": {
+    "luckistar-avatar": "/components/luckistar-avatar/index"
+  }
+}

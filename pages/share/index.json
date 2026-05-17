@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "分享卡",
+  "usingComponents": {
+    "luckistar-avatar": "/components/luckistar-avatar/index"
+  }
+}

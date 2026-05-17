@@ -1,0 +1,92 @@
+<view class="page archive-page">
+  <view class="archive-card card">
+    <view class="archive-header">
+      <text class="page-title">{{title}}</text>
+      <button class="share-star" bindtap="onShareArchive">分享</button>
+    </view>
+    <text class="muted">{{profile.intro}}</text>
+
+    <block tt:if="{{isAstro}}">
+      <view class="profile-panel soft-card">
+        <text class="panel-title">深度人格解析</text>
+        <text class="analysis-text">{{profile.analysis}}</text>
+      </view>
+
+      <view class="planet-list">
+        <view class="planet-item soft-card" tt:for="{{profile.planets}}" tt:key="label">
+          <view class="planet-info">
+            <text class="planet-label">{{item.label}}</text>
+            <text class="planet-value">{{item.value}}</text>
+          </view>
+          <text class="planet-desc">{{item.desc}}</text>
+        </view>
+      </view>
+    </block>
+
+    <block tt:elif="{{isBazi}}">
+      <view class="pillar-grid">
+        <view class="pillar-card soft-card"><text>年柱</text><text>{{profile.yearPillar}}</text></view>
+        <view class="pillar-card soft-card"><text>月柱</text><text>{{profile.monthPillar}}</text></view>
+        <view class="pillar-card soft-card is-day"><text>日柱</text><text>{{profile.dayPillar}}</text></view>
+        <view class="pillar-card soft-card"><text>时柱</text><text>{{profile.hourPillar}}</text></view>
+      </view>
+
+      <view class="profile-panel soft-card">
+        <text class="panel-title">命理特质解析</text>
+        <text class="analysis-text">{{profile.analysis}}</text>
+      </view>
+
+      <view class="profile-panel soft-card">
+        <text class="panel-title">核心能量构成</text>
+        <view class="element-bars">
+          <view class="element-row" tt:for="{{profile.distributionList}}" tt:key="label">
+            <text class="element-name">{{item.label}}</text>
+            <view class="bar-track"><view class="bar-fill" style="width: {{item.barWidth}};"></view></view>
+            <text class="element-count">{{item.value}}</text>
+          </view>
+        </view>
+        <text class="source-text">{{profile.sourceText}}</text>
+      </view>
+    </block>
+
+    <block tt:else>
+      <view class="ziwei-board">
+        <view class="ziwei-main soft-card">
+          <text class="life-palace">{{profile.lifePalace}}</text>
+          <text class="main-stars">{{profile.mainStarText}}</text>
+        </view>
+        <view class="ziwei-side soft-card">
+          <text class="body-palace-label">身宫</text>
+          <text class="body-palace-value">{{profile.bodyPalace}}</text>
+        </view>
+      </view>
+
+      <view class="profile-panel soft-card">
+        <text class="panel-title">潜能动能解析</text>
+        <text class="analysis-text">{{profile.analysis}}</text>
+      </view>
+
+      <view class="ziwei-palaces">
+        <view class="palace-item soft-card {{item.isLifePalace ? 'is-highlight' : ''}}" tt:for="{{profile.palaces}}" tt:key="name">
+          <text class="palace-name">{{item.name}}</text>
+          <text class="palace-stars">{{item.stars}}</text>
+        </view>
+      </view>
+
+      <view class="tag-wrap">
+        <text class="tag" tt:for="{{profile.keywords}}" tt:key="*this">{{item}}</text>
+      </view>
+      
+      <view class="soft-card reminder-panel">
+        <text class="panel-title">今日提醒</text>
+        <text class="reminder-text">{{profile.reminder}}</text>
+      </view>
+    </block>
+
+    <view class="soft-card bazi-mini">
+      <text>出生星运坐标：{{user.birthProvince}} / {{user.birthCity}}</text>
+      <text>真太阳时：{{user.trueSolarTime}}</text>
+      <text>本命日柱：{{user.dayPillar}}</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,66 @@
+.summon-page {
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 26rpx;
+}
+
+.summon-ring {
+  position: relative;
+  width: 430rpx;
+  height: 430rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2rpx solid rgba(255, 255, 255, 0.72);
+  box-shadow: inset 0 0 32rpx rgba(255, 255, 255, 0.38);
+}
+
+.ring-one {
+  inset: 0;
+}
+
+.ring-two {
+  inset: 60rpx;
+  border-style: dashed;
+}
+
+.summon-title {
+  max-width: 640rpx;
+}
+
+.phase-dots {
+  display: flex;
+  gap: 12rpx;
+}
+
+.dot {
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.dot.is-on {
+  background: #f3c95f;
+  box-shadow: 0 0 18rpx rgba(243, 201, 95, 0.72);
+}
+
+.bazi-card {
+  margin-top: 20rpx;
+  padding: 20rpx 24rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+  color: #5a637f;
+  font-size: 24rpx;
+  line-height: 1.6;
+}

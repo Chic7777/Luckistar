@@ -1,0 +1,52 @@
+<view class="page profile-page">
+  <view class="profile-card card">
+    <button class="share-mini" bindtap="onShareNatal">分享</button>
+    <luckistar-avatar star="{{star}}" size="large" unlocked="{{true}}"></luckistar-avatar>
+    <text class="eyebrow">我的本命 LuckiStar</text>
+    <text class="page-title">{{star.name}}</text>
+    <view class="tag-row">
+      <text class="tag">日柱 {{user.dayPillar}}</text>
+      <text class="tag">{{star.elementLabel}}</text>
+      <text class="tag">{{keywordText}}</text>
+    </view>
+    <text class="muted">{{descriptionWithoutSuffix}}</text>
+    
+    <view class="profile-section">
+      <view class="section-title">✨ 星灵能量指南</view>
+      <view class="info-grid">
+        <view class="info-item">
+          <text class="info-label">幸运颜色</text>
+          <text class="info-value">{{luckyColors}}</text>
+        </view>
+        <view class="info-item">
+          <text class="info-label">幸运数字</text>
+          <text class="info-value">{{luckyNumbers}}</text>
+        </view>
+        <view class="info-item">
+          <text class="info-label">契合属性</text>
+          <text class="info-value">{{compatibility}}</text>
+        </view>
+        <view class="info-item">
+          <text class="info-label">星灵信条</text>
+          <text class="info-value">{{motto}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="profile-section">
+      <view class="section-title">🌿 深度成长建议</view>
+      <view class="tips-box soft-card">
+        <text>{{growthTips}}</text>
+      </view>
+    </view>
+
+    <view class="profile-section">
+      <view class="section-title">📍 出生星运坐标</view>
+      <view class="bazi-card soft-card">
+        <text>出生地：{{user.birthProvince}} / {{user.birthCity}}</text>
+        <text>真太阳时：{{user.trueSolarTime}}</text>
+        <text>能量四柱：{{user.yearPillar}} · {{user.monthPillar}} · {{user.dayPillar}} · {{user.hourPillar}}</text>
+      </view>
+    </view>
+  </view>
+</view>

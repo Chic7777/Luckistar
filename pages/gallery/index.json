@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "星灵图鉴",
+  "usingComponents": {
+    "luckistar-avatar": "/components/luckistar-avatar/index"
+  }
+}

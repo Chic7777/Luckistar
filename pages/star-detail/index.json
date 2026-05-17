@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "LuckiStar 详情",
+  "usingComponents": {
+    "luckistar-avatar": "/components/luckistar-avatar/index"
+  }
+}

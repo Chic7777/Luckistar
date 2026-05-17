@@ -1,0 +1,120 @@
+.birth-page {
+  display: flex;
+  flex-direction: column;
+  gap: 28rpx;
+}
+
+.birth-hero {
+  padding: 40rpx 34rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.page-title-one-line {
+  display: block;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 40rpx;
+}
+
+.brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 18rpx;
+}
+
+.brand-logo-wrap {
+  width: 92rpx;
+  height: 92rpx;
+  flex: 0 0 auto;
+}
+
+.brand-logo {
+  width: 92rpx;
+  height: 92rpx;
+  display: block;
+}
+
+.is-bouncy {
+  transform-origin: 50% 70%;
+  animation: clover-bounce 1.25s ease-in-out infinite;
+}
+
+@keyframes clover-bounce {
+  0% {
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+  30% {
+    transform: translateY(-14rpx) scale(1.06) rotate(-2deg);
+  }
+  60% {
+    transform: translateY(0) scale(0.98) rotate(1deg);
+  }
+  100% {
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+}
+
+.brand-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 4rpx;
+}
+
+.brand-name {
+  color: #2f3955;
+  font-size: 30rpx;
+  font-weight: 900;
+}
+
+.birth-form {
+  padding: 30rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 28rpx;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
+}
+
+.field-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18rpx;
+}
+
+.label {
+  color: #46516f;
+  font-size: 26rpx;
+  font-weight: 900;
+}
+
+input,
+.picker-value {
+  min-height: 84rpx;
+  padding: 0 24rpx;
+  border: 2rpx solid rgba(86, 98, 145, 0.16);
+  border-radius: 22rpx;
+  color: #273047;
+  font-size: 28rpx;
+  background: rgba(255, 255, 255, 0.72);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+.field-hint {
+  color: #7a8094;
+  font-size: 23rpx;
+  line-height: 1.6;
+}
+
+.submit-btn {
+  margin-top: 8rpx;
+}

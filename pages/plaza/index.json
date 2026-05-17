@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "星光广场",
+  "usingComponents": {
+    "luckistar-avatar": "/components/luckistar-avatar/index"
+  }
+}

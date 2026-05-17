@@ -1,0 +1,51 @@
+<view class="page detail-page">
+  <view class="detail-card card">
+    <button class="share-mini" bindtap="onShareCard">分享</button>
+    <luckistar-avatar star="{{star}}" size="large" unlocked="{{true}}"></luckistar-avatar>
+    <text class="eyebrow">{{isFresh ? '刚刚点亮' : 'LuckiStar 星灵'}}</text>
+    <text class="page-title">{{star.name}}</text>
+    <view class="tag-row">
+      <text class="tag">{{star.elementLabel}}</text>
+      <text class="tag">{{star.branchMood}}</text>
+      <text class="tag" tt:if="{{isNatal}}">本命</text>
+    </view>
+    <text class="muted">{{star.description}}</text>
+    <view class="quote-card soft-card">{{star.quote}}</view>
+  </view>
+
+  <view class="detail-panel soft-card">
+    <text class="panel-title">星灵档案</text>
+    <view class="info-grid">
+      <view class="info-item" tt:for="{{profileItems}}" tt:key="label">
+        <text class="info-label">{{item.label}}</text>
+        <text class="info-value">{{item.value}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="detail-panel soft-card" tt:if="{{elementIntro || elementKeywordsText}}">
+    <text class="panel-title">五行底色</text>
+    <text class="panel-text" tt:if="{{elementIntro}}">{{elementIntro}}</text>
+    <view class="inline-row" tt:if="{{elementKeywordsText}}">
+      <text class="inline-label">气质</text>
+      <text class="inline-value">{{elementKeywordsText}}</text>
+    </view>
+  </view>
+
+  <view class="detail-panel soft-card">
+    <text class="panel-title">今日星光建议</text>
+    <view class="advice-list">
+      <view class="advice-item" tt:for="{{adviceItems}}" tt:key="title">
+        <text class="advice-title">{{item.title}}</text>
+        <text class="advice-text">{{item.text}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="detail-panel soft-card" tt:if="{{star.keywords && star.keywords.length}}">
+    <text class="panel-title">关键词</text>
+    <view class="tag-row tag-row-left">
+      <text class="tag" tt:for="{{star.keywords}}" tt:key="*this">{{item}}</text>
+    </view>
+  </view>
+</view>

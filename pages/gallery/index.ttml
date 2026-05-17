@@ -1,0 +1,23 @@
+<view class="page gallery-page">
+  <view class="gallery-head card">
+    <view>
+      <text class="eyebrow">星灵图鉴</text>
+      <text class="page-title">已收集 {{progressText}}</text>
+      <text class="muted">当前拥有 {{user.starFragments}} 枚星星碎片。点亮隐藏星灵消耗 10 枚。</text>
+    </view>
+    <button class="btn btn-primary" bindtap="onBlindBox">开启星灵盲盒</button>
+  </view>
+
+  <view class="gallery-grid">
+    <view class="gallery-card card {{item.unlocked ? 'is-unlocked' : 'is-locked'}} {{item.isNatal ? 'is-natal' : ''}}" tt:for="{{cards}}" tt:key="id" data-id="{{item.id}}" bindtap="onCardTap">
+      <button tt:if="{{item.unlocked}}" class="share-star" data-id="{{item.id}}" bindtap="onShareStar">分享</button>
+      <luckistar-avatar star="{{item}}" size="card" unlocked="{{item.unlocked}}"></luckistar-avatar>
+      <text class="card-name">{{item.unlocked ? item.dayPillar : '隐藏 LuckiStar'}}</text>
+      <text class="card-meta">{{item.unlocked ? item.keywordText : '尚未邂逅'}}</text>
+      <view class="badge-row">
+        <text tt:if="{{item.isNatal}}">本命</text>
+        <text tt:if="{{!item.unlocked}}">未解锁</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/plaza/index",
+    "pages/gallery/index",
+    "pages/birth/index",
+    "pages/summon/index",
+    "pages/profile/index",
+    "pages/share/index",
+    "pages/plaza/post/index",
+    "pages/star-detail/index",
+    "pages/archive/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "每日星运",
+    "navigationBarBackgroundColor": "#f8f4e9",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f8f4e9"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "tabBar": {
+    "color": "#7b7f95",
+    "selectedColor": "#58a96a",
+    "backgroundColor": "#fffdf7",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "首页",
+        "iconPath": "assets/tab-home-custom.png",
+        "selectedIconPath": "assets/tab-home-custom.png"
+      },
+      {
+        "pagePath": "pages/plaza/index",
+        "text": "星光广场",
+        "iconPath": "assets/tab-plaza-custom.png",
+        "selectedIconPath": "assets/tab-plaza-custom.png"
+      },
+      {
+        "pagePath": "pages/gallery/index",
+        "text": "星灵图鉴",
+        "iconPath": "assets/tab-gallery-custom.png",
+        "selectedIconPath": "assets/tab-gallery-custom.png"
+      }
+    ]
+  }
+}

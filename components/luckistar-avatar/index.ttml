@@ -1,0 +1,24 @@
+<view class="avatar avatar-{{star.element}} avatar-{{size}} {{unlocked ? '' : 'is-locked'}} {{pure ? 'is-pure' : ''}}">
+  <view class="avatar-glow" tt:if="{{!pure}}"></view>
+  <view class="avatar-orbit" tt:if="{{!pure}}"></view>
+  
+  <view class="avatar-core">
+    <!-- 如果已解锁且有主图，显示主图 -->
+    <image 
+      tt:if="{{unlocked && star.imageUrl}}" 
+      class="avatar-image float-animation" 
+      src="{{star.imageUrl}}" 
+      mode="aspectFit"
+    ></image>
+    
+    <!-- 锁定状态显示剪影 -->
+    <image 
+      tt:if="{{!unlocked}}" 
+      class="avatar-silhouette" 
+      src="{{star.silhouetteUrl}}" 
+      mode="aspectFit"
+    ></image>
+
+    <!-- 移除了原本的 avatar-face (问号小人) 和 avatar-mark -->
+  </view>
+</view>

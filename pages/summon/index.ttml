@@ -1,0 +1,17 @@
+<view class="page summon-page">
+  <view class="summon-ring">
+    <view class="ring ring-one"></view>
+    <view class="ring ring-two"></view>
+    <luckistar-avatar star="{{star}}" size="large" unlocked="{{true}}"></luckistar-avatar>
+  </view>
+
+  <text class="eyebrow">{{baziProfile.dayPillar || '星光'}} LuckiStar</text>
+  <text class="page-title summon-title">{{phaseText}}</text>
+  <view class="phase-dots">
+    <view tt:for="{{dots}}" tt:key="*this" class="dot {{item <= phaseIndex ? 'is-on' : ''}}"></view>
+  </view>
+  <view class="bazi-card card" tt:if="{{baziProfile}}">
+    <text>真太阳时：{{baziProfile.trueSolarTime}}</text>
+    <text>四柱：{{baziProfile.yearPillar}} · {{baziProfile.monthPillar}} · {{baziProfile.dayPillar}} · {{baziProfile.hourPillar}}</text>
+  </view>
+</view>

@@ -1,0 +1,13 @@
+<view class="page post-page">
+  <view class="card post-editor">
+    <text class="eyebrow">发布到星光广场</text>
+    <text class="page-title">让今天的小幸运发光</text>
+    <view class="charm-preview">
+      <text>{{dailyLuck.charm.name}}</text>
+      <text>{{dailyLuck.charm.message}}</text>
+    </view>
+    <input value="{{title}}" maxlength="24" placeholder="给这束星光起个标题" bindinput="onTitleInput" />
+    <textarea value="{{content}}" maxlength="220" placeholder="写下今日打卡、好运符、幸运事件或 LuckiStar 互动。" bindinput="onInput"></textarea>
+    <button class="btn btn-primary" bindtap="onSubmit">发布星光</button>
+  </view>
+</view>

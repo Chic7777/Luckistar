@@ -1,0 +1,51 @@
+<view class="page share-page">
+  <view class="share-card card">
+    <luckistar-avatar star="{{star}}" size="large" unlocked="{{true}}"></luckistar-avatar>
+    <text class="eyebrow">{{title}}</text>
+
+    <block tt:if="{{type === 'daily'}}">
+      <text class="page-title">{{dailyLuck.luckyColor}} · {{dailyLuck.charm.name}}</text>
+      <text class="muted">{{user.nickname}} 的今日好运任务：{{selectedTaskTitle}}</text>
+      <view class="quote-card soft-card">{{dailyLuck.reminder}}</view>
+    </block>
+
+    <block tt:elif="{{type === 'charm'}}">
+      <text class="page-title">{{dailyLuck.charm.name}}</text>
+      <text class="muted">{{dailyLuck.charm.message}}</text>
+      <view class="quote-card soft-card">{{dailyLuck.charm.advice}}</view>
+    </block>
+
+    <block tt:elif="{{type === 'unlock'}}">
+      <text class="page-title">{{star.name}}</text>
+      <text class="muted">{{star.description}}</text>
+      <view class="quote-card soft-card">{{star.quote}}</view>
+    </block>
+
+    <block tt:elif="{{type === 'astro'}}">
+      <text class="page-title">{{profile.sunSign}} / {{profile.moonSign}} / {{profile.risingSign}}</text>
+      <text class="muted">{{profile.keywordText}}</text>
+      <view class="quote-card soft-card">{{profile.todayTip}}</view>
+    </block>
+
+    <block tt:elif="{{type === 'bazi'}}">
+      <text class="page-title">{{profile.dayPillar}} LuckiStar</text>
+      <text class="muted">日主：{{profile.dayMaster}}（{{profile.dayElementLabel}}）</text>
+      <view class="quote-card soft-card">{{profile.todayTip}}</view>
+    </block>
+
+    <block tt:elif="{{type === 'ziwei'}}">
+      <text class="page-title">{{profile.lifePalace}}</text>
+      <text class="muted">{{profile.mainStarText}}</text>
+      <view class="quote-card soft-card">{{profile.reminder}}</view>
+    </block>
+
+    <block tt:else>
+      <text class="page-title">{{star.name}}</text>
+      <text class="muted">{{user.nickname}} · {{star.elementLabel}} · {{star.branchMood}}</text>
+      <view class="quote-card soft-card">{{star.quote}}</view>
+    </block>
+
+    <text class="share-footer">好运不是等来的，是被你一点点点亮的。</text>
+  </view>
+  <button class="btn btn-primary" bindtap="onBackHome">返回首页</button>
+</view>

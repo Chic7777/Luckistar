@@ -1,0 +1,175 @@
+<view class="page home-page">
+  <view class="home-top">
+    <view class="home-top-row">
+      <view class="home-copy">
+        <text class="eyebrow">Hi，{{user.nickname}}</text>
+        <text class="page-title">今天的好运正在靠近你</text>
+      </view>
+      <button class="reset-link" bindtap="onReset">重新召唤</button>
+    </view>
+  </view>
+
+  <view class="natal-stage card">
+    <button class="corner-action" data-type="natal" bindtap="onShareLuck">分享</button>
+    <view class="avatar-container">
+      <luckistar-avatar star="{{natalStar}}" size="large" unlocked="{{true}}" pure="{{true}}"></luckistar-avatar>
+    </view>
+
+    <text class="eyebrow">本命 LuckiStar</text>
+    <text class="natal-name">{{natalStar.name}}</text>
+    <text class="muted">{{natalStar.quote}}</text>
+
+    <view class="personality-board">
+      <view tt:for="{{natalTraits}}" tt:key="label" class="personality-item">
+        <text class="p-label">{{item.label}}</text>
+        <text class="p-value">{{item.value}}</text>
+      </view>
+    </view>
+
+    <button class="mini-link" bindtap="onOpenProfile">查看本命档案</button>
+  </view>
+
+  <view class="daily-overview card">
+    <view class="daily-head">
+      <view>
+        <text class="eyebrow">今日幸运概览</text>
+        <text class="section-title">今天适合轻轻接住这些好运</text>
+      </view>
+      <view class="daily-head-right">
+        <button class="mini-btn share-star-btn" data-type="daily" bindtap="onShareLuck">分享</button>
+      </view>
+    </view>
+    <view class="luck-grid">
+      <view class="luck-item">
+        <text>今日关键词</text>
+        <text>{{dailyLuck.keyword}}</text>
+      </view>
+      <view class="luck-item">
+        <text>幸运色</text>
+        <text>{{dailyLuck.luckyColor}}</text>
+      </view>
+      <view class="luck-item">
+        <text>幸运时间</text>
+        <text>{{dailyLuck.luckyTime}}</text>
+      </view>
+      <view class="luck-item">
+        <text>幸运方向</text>
+        <text>{{dailyLuck.luckyDirection}}</text>
+      </view>
+      <view class="luck-item">
+        <text>幸运地点</text>
+        <text>{{dailyLuck.luckyPlace}}</text>
+      </view>
+      <view class="luck-item">
+        <text>幸运食物</text>
+        <text>{{dailyLuck.luckyFood}}</text>
+      </view>
+      <view class="luck-item">
+        <text>幸运花</text>
+        <text>{{dailyLuck.luckyFlower}}</text>
+      </view>
+      <view class="luck-item">
+        <text>幸运配饰</text>
+        <text>{{dailyLuck.luckyAccessory}}</text>
+      </view>
+      <view class="luck-item">
+        <text>幸运物</text>
+        <text>{{dailyLuck.luckyObject}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="charm-draw-card card {{charmAnimating ? 'is-flipping' : ''}} {{charmDrawn ? 'is-revealed' : ''}}">
+    <view class="daily-head">
+      <view>
+        <text class="eyebrow">今日星光签</text>
+        <text class="section-title">今天的好运提示还藏在星光里</text>
+      </view>
+      <button class="mini-btn share-star-btn" tt:if="{{charmDrawn}}" data-type="charm" bindtap="onShareLuck" data-share-type="card">分享</button>
+    </view>
+    <view class="charm-card-inner" bindtap="onDrawCharm">
+      <view class="charm-card-face charm-back" tt:if="{{!charmDrawn}}">
+        <text class="charm-symbol">✦</text>
+        <text class="charm-hint">{{charmAnimating ? '星光正在翻开...' : '点击抽取你的今日好运'}}</text>
+        <text class="charm-subhint">抽到之后会看到具体提示、建议和分享入口。</text>
+      </view>
+      <view class="charm-card-face charm-front" tt:else>
+        <text class="charm-result">你抽到了</text>
+        <text class="charm-name">{{dailyLuck.charm.name}}</text>
+        <text class="charm-desc">{{dailyLuck.charm.message}}</text>
+        <text class="charm-advice">{{dailyLuck.charm.advice}}</text>
+        <view class="charm-actions">
+          <button bindtap="onOpenCheckin" data-mode="charm">去打卡</button>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="daily-card card">
+    <view class="daily-head">
+      <view>
+        <text class="eyebrow">今日好运任务</text>
+        <text class="section-title">选择 1 个完成就可以</text>
+      </view>
+      <text class="task-status-tip">{{completedToday ? '好运已接住' : '选一个轻轻开始'}}</text>
+    </view>
+    <view class="task-list">
+      <view
+        tt:for="{{dailyLuck.tasks}}"
+        tt:key="id"
+        data-id="{{item.id}}"
+        bindtap="onSelectTask"
+        class="task-item {{selectedTaskId === item.id ? 'is-selected' : ''}} {{completedTaskId === item.id ? 'is-completed' : ''}}"
+      >
+        <view class="task-copy">
+          <text class="task-title">{{item.title}}</text>
+          <text class="task-desc">{{item.desc}}</text>
+        </view>
+        <view class="task-state">
+          <text tt:if="{{completedTaskId === item.id}}">今日已打卡</text>
+          <text tt:elif="{{selectedTaskId === item.id}}">已选中</text>
+          <text tt:else>可选择</text>
+        </view>
+      </view>
+    </view>
+    <view class="task-footer soft-card">
+      <text class="task-footer-title">{{completedToday ? '今天已经完成 1 个好运任务' : (selectedTaskTitle || '先挑一个你今天最想完成的小任务')}}</text>
+      <text class="muted">{{completedToday ? '你已经接住今天的好运，可以继续记录幸运事件或分享到星光广场。' : '完成后会获得星星碎片，也可以顺手记录今天的小幸运。'}}</text>
+      <button class="btn btn-primary task-action" tt:if="{{completedToday}}" bindtap="onOpenCheckin" data-mode="event">继续记录幸运事件</button>
+      <button class="btn btn-primary task-action" tt:else bindtap="onOpenCheckin" data-mode="task">完成这个任务</button>
+    </view>
+  </view>
+
+  <view class="archive-card card">
+    <text class="eyebrow">星运档案</text>
+    <text class="muted">在这里，你可以探索更深层的星光秘密，查看属于你的本命星盘与命理档案。</text>
+    <view class="archive-actions">
+      <button data-type="astro" bindtap="onOpenArchive">星盘小屋</button>
+      <button data-type="bazi" bindtap="onOpenArchive">八字星册</button>
+      <button data-type="ziwei" bindtap="onOpenArchive">紫微星图</button>
+    </view>
+  </view>
+
+  <view class="safe-note">本作品为轻互动娱乐体验，不代表确定预测。</view>
+
+  <view class="modal-mask" tt:if="{{showCheckinModal}}" bindtap="onCloseCheckin">
+    <view class="modal-card card" catchtap="noop">
+      <text class="eyebrow">{{checkinMode === 'task' ? '好运任务打卡' : (checkinMode === 'charm' ? '星光签打卡' : '记录幸运事件')}}</text>
+      <text class="section-title">{{checkinMode === 'task' ? (selectedTaskTitle || '完成今日好运任务') : (checkinMode === 'charm' ? (dailyLuck.charm.name || '今日星光签') : '记录今天的小幸运')}}</text>
+      <textarea
+        value="{{eventContent}}"
+        maxlength="180"
+        placeholder="{{checkinMode === 'task' ? '写一句完成感受（可选）' : (checkinMode === 'charm' ? '写下你今天收到的星光提示（可选）' : '比如：我去晒了五分钟太阳，心真的变轻了一点。')}}"
+        bindinput="onEventInput"
+      ></textarea>
+      <checkbox-group bindchange="onPublishChange">
+        <label class="checkbox-line">
+          <checkbox value="publish" checked="{{publishToPlaza}}" />
+          <text>发布到星光广场</text>
+        </label>
+      </checkbox-group>
+      <button class="btn btn-primary" bindtap="onSubmitCheckin">{{checkinMode === 'task' ? '完成任务打卡' : (checkinMode === 'charm' ? '星光签打卡' : '记录幸运事件')}}</button>
+      <button class="btn btn-ghost" bindtap="onCloseCheckin">先不记录</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "召唤 LuckiStar",
+  "usingComponents": {
+    "luckistar-avatar": "/components/luckistar-avatar/index"
+  }
+}

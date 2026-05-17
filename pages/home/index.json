@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "每日星运",
+  "usingComponents": {
+    "luckistar-avatar": "/components/luckistar-avatar/index"
+  }
+}

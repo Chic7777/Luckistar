@@ -1,0 +1,92 @@
+.gallery-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+}
+
+.gallery-head {
+  padding: 28rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 22rpx;
+}
+
+.gallery-head .page-title {
+  display: block;
+  margin: 8rpx 0 10rpx;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18rpx;
+}
+
+.gallery-card {
+  min-height: 300rpx;
+  padding: 20rpx 12rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10rpx;
+  text-align: center;
+}
+
+.gallery-card.is-natal {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 248, 207, 0.78));
+}
+
+.gallery-card.is-unlocked {
+  border-color: rgba(255, 239, 146, 0.9);
+}
+
+.card-name {
+  color: #303952;
+  font-size: 27rpx;
+  font-weight: 900;
+}
+
+.card-meta {
+  min-height: 64rpx;
+  color: #6d7288;
+  font-size: 22rpx;
+  line-height: 1.45;
+}
+
+.badge-row {
+  display: flex;
+  gap: 8rpx;
+  min-height: 34rpx;
+}
+
+.badge-row text {
+  min-height: 34rpx;
+  padding: 0 12rpx;
+  border-radius: 999rpx;
+  color: #5a6380;
+  font-size: 20rpx;
+  font-weight: 900;
+  background: rgba(255, 255, 255, 0.66);
+}
+
+.share-star {
+  position: absolute;
+  top: 48rpx;
+  right: 48rpx;
+  width: 94rpx;
+  height: 94rpx;
+  min-height: 94rpx;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #ffe49a 0%, #f3c95f 56%, #e7b74c 100%);
+  color: #fff;
+  font-size: 22rpx;
+  font-weight: 900;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  border: none;
+  z-index: 10;
+  box-shadow: 0 12rpx 28rpx rgba(243, 201, 95, 0.26), inset 0 2rpx 0 rgba(255, 255, 255, 0.45);
+}

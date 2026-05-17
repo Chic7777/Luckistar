@@ -1,0 +1,106 @@
+.profile-card {
+  position: relative;
+  padding: 36rpx 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18rpx;
+  text-align: center;
+}
+
+.share-mini {
+  position: absolute;
+  top: 22rpx;
+  right: 22rpx;
+  width: 90rpx;
+  height: 90rpx;
+  min-height: 90rpx;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #ffe49a 0%, #f3c95f 56%, #e7b74c 100%);
+  color: #fff;
+  font-size: 20rpx;
+  font-weight: 900;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  border: none;
+  box-shadow: 0 12rpx 28rpx rgba(243, 201, 95, 0.26), inset 0 2rpx 0 rgba(255, 255, 255, 0.45);
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10rpx;
+}
+
+.bazi-card {
+  width: 100%;
+  padding: 24rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
+  color: #56617f;
+  font-size: 24rpx;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.profile-section {
+  width: 100%;
+  margin-top: 32rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16rpx;
+}
+
+.section-title {
+  font-size: 28rpx;
+  font-weight: 900;
+  color: #303952;
+  margin-bottom: 4rpx;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16rpx;
+  width: 100%;
+}
+
+.info-item {
+  background: rgba(255, 255, 255, 0.5);
+  padding: 20rpx;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8rpx;
+  border: 1rpx solid rgba(255, 255, 255, 0.8);
+}
+
+.info-label {
+  font-size: 20rpx;
+  color: #7b8198;
+  font-weight: 800;
+}
+
+.info-value {
+  font-size: 24rpx;
+  color: #5e6bd1;
+  font-weight: 900;
+}
+
+.tips-box {
+  width: 100%;
+  padding: 24rpx;
+  box-sizing: border-box;
+  color: #414a68;
+  font-size: 26rpx;
+  line-height: 1.6;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.4);
+}

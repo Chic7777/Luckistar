@@ -1,0 +1,350 @@
+.archive-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.archive-card {
+  padding: 36rpx 30rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 22rpx;
+}
+
+.archive-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24rpx;
+}
+
+.share-star {
+  width: 94rpx;
+  height: 94rpx;
+  min-height: 94rpx;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #ffe49a 0%, #f3c95f 56%, #e7b74c 100%);
+  color: #fff;
+  font-size: 22rpx;
+  font-weight: 900;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  border: none;
+  margin: 0;
+  box-shadow: 0 12rpx 28rpx rgba(243, 201, 95, 0.26), inset 0 2rpx 0 rgba(255, 255, 255, 0.45);
+}
+
+.planet-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.planet-item {
+  padding: 24rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
+}
+
+.planet-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.planet-label {
+  color: #303952;
+  font-size: 28rpx;
+  font-weight: 900;
+}
+
+.planet-value {
+  color: #5e6bd1;
+  font-size: 28rpx;
+  font-weight: 900;
+}
+
+.planet-desc {
+  color: #5f6884;
+  font-size: 24rpx;
+  line-height: 1.5;
+}
+
+.analysis-text {
+  color: #414a68;
+  font-size: 26rpx;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.astro-orbit {
+  position: relative;
+  height: 360rpx;
+  border-radius: 34rpx;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 246, 176, 0.9), rgba(255, 255, 255, 0.18) 26%, rgba(126, 216, 213, 0.22) 62%, rgba(126, 141, 232, 0.18));
+  border: 2rpx solid rgba(255, 255, 255, 0.62);
+  overflow: hidden;
+}
+
+.orbit-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 170rpx;
+  height: 170rpx;
+  margin-left: -85rpx;
+  margin-top: -85rpx;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fff0a8, #7ed8d5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #303952;
+  font-weight: 900;
+  box-shadow: 0 0 40rpx rgba(243, 201, 95, 0.45);
+}
+
+.orbit-center text:first-child {
+  font-size: 32rpx;
+}
+
+.orbit-center text:last-child {
+  color: #69718c;
+  font-size: 22rpx;
+}
+
+.orbit-chip {
+  position: absolute;
+  min-height: 54rpx;
+  padding: 0 22rpx;
+  border-radius: 999rpx;
+  color: #fff;
+  font-size: 25rpx;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  background: rgba(94, 107, 209, 0.76);
+}
+
+.orbit-chip.moon {
+  left: 54rpx;
+  top: 70rpx;
+}
+
+.orbit-chip.rising {
+  right: 42rpx;
+  bottom: 72rpx;
+  background: rgba(67, 184, 191, 0.78);
+}
+
+.archive-grid,
+.pillar-grid,
+.insight-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14rpx;
+}
+
+.pillar-grid {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.pillar-grid .pillar-card {
+  padding: 18rpx 10rpx;
+  gap: 6rpx;
+  align-items: center;
+}
+
+.pillar-grid .pillar-card text:first-child {
+  font-size: 20rpx;
+}
+
+.pillar-grid .pillar-card text:nth-child(2) {
+  font-size: 26rpx;
+}
+
+.info-card,
+.pillar-card,
+.insight-card {
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+}
+
+.info-card text:first-child,
+.pillar-card text:first-child {
+  color: #7a8094;
+  font-size: 22rpx;
+  font-weight: 800;
+}
+
+.info-card text:nth-child(2),
+.pillar-card text:nth-child(2) {
+  color: #303952;
+  font-size: 32rpx;
+  font-weight: 900;
+}
+
+.info-card text:last-child,
+.insight-card text:last-child {
+  color: #5f6884;
+  font-size: 23rpx;
+  line-height: 1.6;
+}
+
+.profile-panel {
+  padding: 24rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+  color: #52607f;
+  font-size: 27rpx;
+  line-height: 1.65;
+}
+
+.panel-title {
+  color: #2f3955;
+  font-size: 24rpx;
+  font-weight: 900;
+}
+
+.pillar-card.is-day {
+  background: linear-gradient(135deg, rgba(255, 247, 198, 0.92), rgba(223, 245, 242, 0.76));
+}
+
+.source-text {
+  color: #5e6bd1;
+  font-weight: 900;
+}
+
+.element-bars {
+  padding: 22rpx;
+  border-radius: 28rpx;
+  background: rgba(255, 255, 255, 0.58);
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.element-row {
+  display: grid;
+  grid-template-columns: 42rpx 1fr 42rpx;
+  align-items: center;
+  gap: 14rpx;
+  color: #52607f;
+  font-size: 24rpx;
+  font-weight: 900;
+}
+
+.bar-track {
+  height: 16rpx;
+  border-radius: 999rpx;
+  background: rgba(93, 104, 131, 0.13);
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 999rpx;
+  background: linear-gradient(90deg, #7ed8d5, #f3c95f);
+}
+
+.ziwei-board {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 14rpx;
+}
+
+.ziwei-main,
+.ziwei-side {
+  min-height: 210rpx;
+  padding: 24rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10rpx;
+  color: #303952;
+  font-weight: 900;
+}
+
+.ziwei-main {
+  background: linear-gradient(135deg, rgba(126, 141, 232, 0.7), rgba(255, 247, 198, 0.74));
+}
+
+.ziwei-main text:first-child {
+  font-size: 36rpx;
+}
+
+.ziwei-main text:last-child,
+.ziwei-side text:last-child {
+  color: #52607f;
+  font-size: 27rpx;
+  line-height: 1.5;
+}
+
+.tag-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10rpx;
+}
+
+.bazi-mini {
+  padding: 22rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+  color: #56617f;
+  font-size: 24rpx;
+  line-height: 1.6;
+}
+
+.reminder-panel {
+  padding: 24rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
+}
+
+.reminder-text {
+  color: #5e6bd1;
+  font-size: 26rpx;
+  line-height: 1.6;
+  font-weight: 800;
+}
+
+.ziwei-palaces {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12rpx;
+}
+
+.palace-item {
+  padding: 16rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8rpx;
+  text-align: center;
+}
+
+.palace-item.is-highlight {
+  background: linear-gradient(135deg, rgba(255, 247, 198, 0.9), rgba(126, 216, 213, 0.5));
+  border: 2rpx solid #f3c95f;
+}
+
+.palace-name {
+  font-size: 22rpx;
+  color: #7a8094;
+  font-weight: 800;
+}
+
+.palace-stars {
+  font-size: 20rpx;
+  color: #303952;
+  font-weight: 900;
+}
